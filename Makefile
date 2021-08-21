@@ -18,7 +18,7 @@ clean:
 
 lint: bin/golangci-lint
 	@echo "--- lint all the things"
-	@bin/golangci-lint run
+	@bin/golangci-lint run ./...
 .PHONY: lintg
 
 test:
