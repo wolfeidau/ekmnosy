@@ -1,6 +1,6 @@
 # ekmnosy
 
-This project is my implemntation of the monkey langauge in Go based on [Writing An Interpreter In Go](interpreterbook.com) by @mrnugget aka Thorsten Ball.
+This project is my implemntation of the monkey langauge in Go based on [Writing An Interpreter In Go](https://interpreterbook.com) by [Thorsten Ball](https://github.com/mrnugget).
 
 # License
 
