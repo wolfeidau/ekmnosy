@@ -1,0 +1,29 @@
+---
+project_name: ekmnosy
+
+builds:
+- main: ./main.go
+  binary: ekmnosy
+  ldflags:
+    - -s -w -X main.version={{.Version}}
+  env:
+  - CGO_ENABLED=0
+  goarch:
+    - amd64
+    - arm64
+  goos:
+    - linux
+    - darwin
+    - windows
+    
+  mod_timestamp: '{{ .CommitTimestamp }}'
+archives:
+  - format: tar.gz
+    wrap_in_directory: true
+    format_overrides:
+      - goos: windows
+        format: zip
+    # remove README and LICENSE
+    files:
+      - LICENSE
+      - README.md
