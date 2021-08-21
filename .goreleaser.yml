@@ -6,6 +6,8 @@ builds:
   binary: ekmnosy
   ldflags:
     - -s -w -X main.version={{.Version}}
+  flags:
+    - -trimpath
   env:
   - CGO_ENABLED=0
   goarch:
