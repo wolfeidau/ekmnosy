@@ -1,8 +1,6 @@
 package lexer
 
 import (
-	"unicode/utf8"
-
 	"github.com/wolfeidau/ekmnosy/internal/token"
 )
 
@@ -22,15 +20,11 @@ func New(input string) *Lexer {
 func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
-		return // EOF
-	}
-
-	if l.input[l.readPosition] < utf8.RuneSelf {
+	} else {
 		l.ch = l.input[l.readPosition]
-		l.position = l.readPosition
-		l.readPosition += 1
 	}
-
+	l.position = l.readPosition
+	l.readPosition += 1
 }
 
 func (l *Lexer) NextToken() token.Token {

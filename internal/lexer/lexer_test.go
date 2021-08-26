@@ -10,6 +10,7 @@ import (
 
 func TestNextToken(t *testing.T) {
 	assert := require.New(t)
+
 	input := `let five = 5;
 let ten = 10;
 
